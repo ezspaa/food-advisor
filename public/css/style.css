@@ -368,7 +368,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .r-card .media { position: relative; aspect-ratio: 16 / 11; overflow: hidden; background: var(--surface-2); }
 .r-card .media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.9s var(--ease), opacity 0.6s var(--ease-soft); }
 .r-card:hover .media img { transform: scale(1.06); }
-.r-card .media .tags { position: absolute; left: 12px; top: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+.r-card .media .tags { position: absolute; left: 12px; top: 12px; right: 104px; display: flex; gap: 6px; flex-wrap: wrap; }
+/* badges must never slide under the compare / favourite buttons */
+.r-card .media .tags .badge { white-space: nowrap; }
 .r-card .card-actions { position: absolute; right: 12px; top: 12px; z-index: 4; display: flex; gap: 8px; }
 .cmp-btn { opacity: 0; transform: translateY(-4px); transition: opacity 0.25s, transform 0.3s var(--ease), color 0.2s, background-color 0.2s; }
 .r-card:hover .cmp-btn, .cmp-btn.active, .cmp-btn:focus-visible { opacity: 1; transform: none; }
@@ -1060,4 +1062,8 @@ canvas.confetti { position: fixed; inset: 0; pointer-events: none; z-index: 400;
   .h-bars .row { grid-template-columns: 90px 1fr 32px; }
   .donut-wrap { flex-direction: column; align-items: flex-start; }
   .modal-body { padding: 18px; }
+  .profile-hero { flex-wrap: wrap; gap: 16px; padding: 20px; }
+  .profile-hero > div { flex: 1 1 180px; }
+  .profile-hero > .btn { width: 100%; justify-content: center; }
+  .profile-hero h2 { font-size: 24px; }
 }

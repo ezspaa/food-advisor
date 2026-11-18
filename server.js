@@ -62,7 +62,19 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(config.port, async () => {
+app.listen(config.port, async (listenErr) => {
+  // Express 5 passes listen errors here instead of throwing. Without this check a
+  // second copy of the server (port already taken) would look like it started
+  // while the browser keeps talking to the old one.
+  if (listenErr) {
+    if (listenErr.code === 'EADDRINUSE') {
+      console.error(`\n  ❌ Port ${config.port} is already in use — Food Advisor (or another app) is already running.`);
+      console.error('     Stop the other copy (Ctrl+C in its terminal) or set a different PORT in .env.\n');
+    } else {
+      console.error(`\n  ❌ Could not start the server: ${listenErr.message}\n`);
+    }
+    process.exit(1);
+  }
   console.log(`\n  🍽️  Food Advisor running at http://localhost:${config.port}\n`);
   try {
     await pool.query('SELECT 1 FROM users LIMIT 1');

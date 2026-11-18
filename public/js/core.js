@@ -235,7 +235,19 @@
       </article>`;
   };
 
-  const DISH_EMOJI = { Starters: '🥗', Mains: '🍲', Sides: '🍟', Desserts: '🍰', Drinks: '🥤' };
+  // Shown only when a dish has no photo (or the photo fails to load):
+  // first try to guess from the dish name, then fall back to the course.
+  const DISH_EMOJI = { Starters: '🥟', Mains: '🍲', Sides: '🥔', Desserts: '🍰', Drinks: '🥤' };
+  const DISH_WORDS = [
+    [/salad|achichuk|pkhali/i, '🥗'], [/soup|shurpa|ramen|udon|pho|lagman|noodle|chow mein/i, '🍜'],
+    [/pizza|lahmacun/i, '🍕'], [/burger/i, '🍔'], [/fries|chips/i, '🍟'], [/sushi|nigiri|roll\b/i, '🍣'],
+    [/steak|tomahawk|ribs|kebab|shashlik|mtsvadi|meat/i, '🥩'], [/chicken|wings/i, '🍗'], [/fish|salmon|cod/i, '🐟'],
+    [/shrimp|oyster|octopus|seafood|prawn/i, '🦐'], [/taco|burrito|quesadilla|nachos/i, '🌮'], [/rice|plov|biryani/i, '🍚'],
+    [/dumpling|manty|khinkali|dim sum|samsa|samosa/i, '🥟'], [/bread|naan|khachapuri|toast|croissant|baursak/i, '🥐'],
+    [/tea\b|matcha/i, '🍵'], [/coffee|espresso|cappuccino|latte|flat white/i, '☕'], [/smoothie|juice|lemonade|lassi|ayran|milk/i, '🥤'],
+    [/ice cream|gelato|bingsu|mochi/i, '🍨'], [/donut/i, '🍩'], [/cake|tart|brownie|fondant|baklava|halva|dessert/i, '🍰'],
+  ];
+  FA.dishEmoji = (d) => (DISH_WORDS.find(([re]) => re.test(d.name || '')) || [])[1] || DISH_EMOJI[d.category] || '🍽️';
   // labels for the nutrition / audience data
   FA.AUDIENCE = {
     kids: ['👶', 'Kids'], sharing: ['👥', 'Great for sharing'], sport: ['💪', 'High protein · active people'],
@@ -247,8 +259,8 @@
   FA.dishCard = function (d, opts = {}) {
     FA.dishCache[d.id] = { ...FA.dishCache[d.id], ...d };
     const thumb = d.image_url
-      ? `<img src="${FA.esc(d.image_url)}" alt="${FA.esc(d.name)}" loading="lazy" class="fade" data-fallback="${DISH_EMOJI[d.category] || '🍽️'}">`
-      : DISH_EMOJI[d.category] || '🍽️';
+      ? `<img src="${FA.esc(d.image_url)}" alt="${FA.esc(d.name)}" loading="lazy" class="fade" data-fallback="${FA.dishEmoji(d)}">`
+      : FA.dishEmoji(d);
     const tags = [
       Number(d.is_vegetarian) ? `<span class="badge badge-green">${FA.icon('leaf')}Vegetarian</span>` : '',
       Number(d.is_spicy) ? `<span class="badge badge-red">${FA.icon('fire')}Spicy</span>` : '',
@@ -291,7 +303,7 @@
     const daily = hasNutrition ? Math.round((d.calories / 2000) * 100) : null;
     const macro = (cls, label, grams, kcal) => `
       <div class="macro macro-${cls}"><span>${label}</span><span class="track"><span data-w="${Math.round((kcal / kcalSum) * 100)}"></span></span><span class="val">${grams !== null && grams !== undefined ? Math.round(grams) + ' g' : '—'}</span></div>`;
-    const img = d.image_url ? `<img src="${FA.esc(d.image_url.replace('w=600', 'w=900'))}" alt="${FA.esc(d.name)}" class="fade">` : (DISH_EMOJI[d.category] || '🍽️');
+    const img = d.image_url ? `<img src="${FA.esc(d.image_url.replace('w=600', 'w=900'))}" alt="${FA.esc(d.name)}" class="fade" data-fallback="${FA.dishEmoji(d)}">` : FA.dishEmoji(d);
 
     FA.modal({
       title: d.category || 'Dish',
