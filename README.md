@@ -196,13 +196,15 @@ tests/api.test.js         end-to-end tests
 
 ## 6. Suggested 6-minute demo script
 
+Full narration for each speaker: [`docs/demo-video-script.md`](docs/demo-video-script.md).
+
 | Time | Who | What to show |
 |---|---|---|
 | 0:00–0:30 | Madina | Group introduction, aim of Food Advisor, the three roles |
 | 0:30–1:15 | Miras | Architecture diagram (section 3): browser ↔ JSON API ↔ MySQL, RBAC, security |
 | 1:15–2:30 | Zamira | **Guest/customer:** spin the “What should I eat?” roulette → home search with suggestions → explore filters (city, cuisine, rating, price, open now) → dish search → restaurant page → log in as customer → write a review, edit it, vote helpful, save a favourite, show the profile and Web Storage history |
 | 2:30–3:45 | Miras | **Owner:** dashboard charts → add a restaurant (pending) → edit the menu, mark a dish as sold out → reply to a review. Show that another owner's restaurant cannot be edited (403/404) |
-| 3:45–5:00 | Ilyas | **Admin:** approve the new restaurant → reports queue: hide the spam review → block the spammer → users / cuisines. Then show the MySQL tables and `npm test` (34 passing) |
+| 3:45–5:00 | Ilyas | **Admin:** approve the new restaurant → reports queue: hide the spam review → block the spammer → users / cuisines. Then show the MySQL tables and `npm test` (42 passing) |
 | 5:00–6:00 | Madina | Code structure overview (section 3) and the Team Member Contribution Table |
 
 ---
