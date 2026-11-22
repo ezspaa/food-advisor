@@ -36,7 +36,7 @@
 
 **Слайд 1** — «Find your next favourite table.», группа, четыре имени с ID.
 
-> **Hello! We are Group 4 from CE 202, and this is our final demonstration for Web Programming — Food Advisor.
+> **Hello! We are Group 4 from CE 202, and this is our final demonstration for F28JC Web Programming — Food Advisor.
 > Our team is Madina Bazarbayeva, Zamira Nurmanova, Ilyas Sungatov and Miras Yernazarov.**
 
 **Слайд 2** — «Helping people decide where to eat», три карточки ролей. Когда называешь роль — веди мышкой по карточке.
