@@ -82,7 +82,7 @@ With the server running, `npm test` runs 42 end-to-end API tests (Node's built-i
 | Interactivity | JavaScript + **jQuery 3.7.1** (DOM, events, AJAX, animation) | `public/js/*.js` |
 | Data transfer | **JSON** REST API | `/api/*` |
 | Backend | **Node.js** + Express | `server.js`, `server/` |
-| Database | **MySQL** (9 tables, foreign keys, indexes) | `database/schema.sql` |
+| Database | **MySQL** (10 tables, foreign keys, indexes) | `database/schema.sql` |
 | Local persistence | **Web Storage**: `localStorage` + `sessionStorage` | `public/js/core.js` |
 | Testing | `node:test` (built into Node) | `tests/api.test.js` |
 

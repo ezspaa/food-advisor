@@ -24,41 +24,43 @@
 | # | Время | Кто | Что |
 |---|---|---|---|
 | 1 | 0:00–0:30 | Мадина | Слайды 1–2: команда, цель, три роли |
-| 2 | 0:30–1:15 | Мирас | Слайд 3: архитектура и безопасность |
+| 2 | 0:30–1:15 | Мирас | Слайды 3–4: архитектура и технологии |
 | 3 | 1:15–2:30 | Замира | Сайт: гость и покупатель (customer) |
 | 4 | 2:30–3:45 | Мирас | Сайт: владелец ресторана (owner) |
 | 5 | 3:45–5:00 | Ильяс | Сайт: админ + MySQL + тесты |
-| 6 | 5:00–6:00 | Мадина | Слайды 4–5: структура кода и таблица вклада |
+| 6 | 5:00–6:00 | Мадина | Слайды 5–7: структура кода, таблица вклада, Thank you |
 
 ---
 
 ## 1. Мадина — слайды 1–2 (0:00–0:30)
 
-**Слайд 1** — название «Food Advisor», F28JC Web Programming, CW1.2, CE 202 Group 4, четыре имени.
+**Слайд 1** — «Find your next favourite table.», группа, четыре имени с ID.
 
-> **Hello! We are Group 4 from CE 202, and this is our project for F28JC Web Programming — Food Advisor.
+> **Hello! We are Group 4 from CE 202, and this is our final demonstration for Web Programming — Food Advisor.
 > Our team is Madina Bazarbayeva, Zamira Nurmanova, Ilyas Sungatov and Miras Yernazarov.**
 
-**Слайд 2** — цель проекта + три иконки ролей: Customer, Restaurant owner, Administrator.
+**Слайд 2** — «Helping people decide where to eat», три карточки ролей. Когда называешь роль — веди мышкой по карточке.
 
-> **Food Advisor helps people find restaurants and dishes in Aktobe, Almaty and Astana.
-> The site has three roles. Customers search, filter and review restaurants.
-> Owners manage their own restaurants and menus. And administrators moderate users, restaurants and reviews.
+> **Our aim is to help people decide where to eat. Food Advisor is one website to discover restaurants and dishes in Aktobe, Almaty and Astana, compare them by cuisine, location, rating and price, and read honest reviews.
+> The site has three roles. Customers discover and review restaurants.
+> Owners manage their own place — their restaurants, menus and replies to guests.
+> And administrators keep the site trustworthy — they approve restaurants, manage users and remove bad reviews.
 > Now Miras will explain how the system works.**
 
 ---
 
-## 2. Мирас — слайд 3, архитектура (0:30–1:15)
+## 2. Мирас — слайды 3–4, архитектура и технологии (0:30–1:15)
 
-**Слайд 3** — схема из README (раздел 3): Browser → JSON API (Node.js + Express) → MySQL.
-Пока говоришь, показывай мышкой по схеме слева направо.
+**Слайд 3** — «Three layers, talking JSON». Веди мышкой слева направо: Client → Server → Data.
 
-> **Our application has three layers.
-> In the browser we use HTML, CSS and jQuery. The pages talk to the server only with AJAX requests, and all data is sent as JSON.
-> The back end is Node.js with Express. It is split into routes: auth, restaurants, dishes, reviews, profile, owner and admin.
-> The data is stored in MySQL — nine tables with foreign keys and indexes.
-> Security was important for us. Passwords are hashed with scrypt, every SQL query uses placeholders against SQL injection, and every owner and admin action is checked on the server by role. So even if someone changes the page, the server still says no.
-> We also use Web Storage — for the login token, dark mode, favourites and recent searches.
+> **Our application has three layers that talk to each other with JSON.
+> The client is the browser: HTML pages with CSS, and jQuery for events and AJAX calls.
+> The server is Node.js with Express. It gives a REST API, checks the login token and the user's role, validates every input, hashes passwords with scrypt and limits login attempts.
+> The data is stored in MySQL — ten tables with foreign keys, indexes for search, and CHECK and UNIQUE rules. Every SQL query uses question-mark parameters, so SQL injection does not work.**
+
+**Слайд 4** — «Course technologies, used together» (6 карточек). Говоришь быстро, ~15 секунд.
+
+> **We used only the course technologies, all together: HTML and CSS for the layout and the light and dark theme, jQuery for interactivity, JSON between browser and server, Node.js for the server, MySQL for the data, and Web Storage for favourites, history and settings.
 > Now Zamira will show the site as a customer.**
 
 ---
@@ -113,28 +115,32 @@ Login → демо-кнопка **Admin**.
 | **Reports** → отзыв от *Best Deals KZ* (spam) → **Hide review** | **Users can report bad reviews. This one is spam, so I hide it — and the restaurant's average rating is recalculated.** |
 | **Users** → найти *Best Deals KZ* → **Block** | **Then I block the spammer. A blocked user is logged out immediately and cannot log in again.** |
 | (коротко) **Cuisines**, **Site feedback** | **I can also manage cuisines and read feedback from testers.** |
-| MySQL Workbench (или терминал `mysql`) → показать список таблиц и `SELECT * FROM restaurants LIMIT 5;` | **Here is our MySQL database: nine tables — users, sessions, cuisines, restaurants, dishes, reviews, votes, reports and favourites — connected with foreign keys.** |
+| MySQL Workbench (или терминал `mysql`) → показать список таблиц и `SELECT * FROM restaurants LIMIT 5;` | **Here is our MySQL database: ten tables — users, sessions, cuisines, restaurants, dishes, reviews, votes, reports, favourites and feedback — connected with foreign keys.** |
 | Терминал: `npm test` (сервер должен быть запущен) → показать что все **42 passing** | **Finally, our 42 automated tests check every functional requirement and the security rules — for example, that customers cannot open owner pages and that SQL injection does not work. All tests pass. Back to Madina.** |
 
 ---
 
-## 6. Мадина — слайды 4–5 (5:00–6:00)
+## 6. Мадина — слайды 5–7 (5:00–6:00)
 
-**Слайд 4** — структура кода (папки из README, раздел 3: `server.js`, `server/routes`, `server/middleware`, `database`, `public`, `tests`).
+**Слайд 5** — «Organised by responsibility» (таблица папок). Веди мышкой по строкам сверху вниз.
 
-> **To sum up, here is how our code is organised.
-> server.js starts the Express app. The server folder has the routes, the middleware for login and roles, and helper functions for validation and passwords.
-> The database folder has the MySQL schema and the sample data. The public folder has all the HTML pages, the CSS and the jQuery scripts. And the tests folder has our automated tests.
-> We used only the technologies from the course: HTML, CSS, JavaScript with jQuery, JSON, Node.js and MySQL.**
+> **To sum up, here is how our code is organised — by responsibility.
+> server.js and config.js start the Express app, add the security headers and handle errors.
+> The routes folder has the REST API, split by area: auth, restaurants, dishes, reviews, owner and admin.
+> The middleware checks the login and the user's role, and limits login attempts. The utils folder has validation, password hashing and shared SQL.
+> The database folder has the schema and the sample data, the public folder has the HTML pages, the jQuery scripts and the stylesheet, and the tests folder has automated tests for every functional requirement.**
 
-**Слайд 5** — Team Member Contribution Table (README, раздел 7 — **проверьте, что там правда, кто что делал!**).
+**Слайд 6** — «Who did what». Текст совпадает со слайдом, чтобы не было расхождений.
 
-> **This table shows what each of us did.
-> I was the reporter — I did the documentation, the video and the submission.
-> Zamira built the front end — the pages, the design and the responsive layout.
-> Miras built the back end — the REST API, login, roles and security.
-> And Ilyas designed the database and wrote the tests.
-> Thank you for watching!**
+> **This table shows how we shared the work.
+> I was the reporter — I did the planning, the documentation, the slides, the video and the Canvas submission.
+> Zamira led the front end — the pages, the jQuery interactivity and the responsive layout.
+> Miras led the back end — the routes, login, role checks, validation and security.
+> And Ilyas led the database and testing — the MySQL schema, the sample data and the automated tests.**
+
+**Слайд 7** — «Thank you.»
+
+> **Thank you for watching!**
 
 ---
 
