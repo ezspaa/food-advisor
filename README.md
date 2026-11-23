@@ -37,6 +37,12 @@ npm start               # creates the database automatically on the first run
 
 `npm run db:setup` resets the database to the original sample data at any time (useful before recording the demo).
 
+**Database file:** `database/food_advisor_dump.sql` is a full MySQL dump (all 10 tables with the sample data). To load it without Node.js:
+
+```bash
+mysql -u root -p < database/food_advisor_dump.sql
+```
+
 ### Share a public link with testers
 
 Double-click **`share.command`** (macOS) or **`share.bat`** (Windows), or run `npm run share`.
