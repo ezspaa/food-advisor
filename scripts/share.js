@@ -38,13 +38,13 @@ async function main() {
   }
 
   if (!(await isUp())) {
-    console.log(`▶ Starting Food Advisor on port ${port}…`);
+    console.log(`▶ Starting Dämdi on port ${port}…`);
     const server = spawn(process.execPath, ['--env-file-if-exists=.env', 'server.js'], { stdio: 'inherit', env: { ...process.env, PORT: port } });
     children.push(server);
     for (let i = 0; i < 40 && !(await isUp()); i++) await new Promise((r) => setTimeout(r, 500));
     if (!(await isUp())) { console.error('❌ The server did not start. Is MySQL running?'); shutdown(1); }
   } else {
-    console.log(`▶ Food Advisor is already running on port ${port}`);
+    console.log(`▶ Dämdi is already running on port ${port}`);
   }
 
   console.log('▶ Opening a public tunnel (takes ~5 seconds)…');

@@ -81,7 +81,7 @@ $(function () {
         const d = FA.formData($reg);
         const res = await FA.api('POST', '/auth/register', { name: d.name, email: d.email, password: d.password, role: d.role, city: d.city });
         FA.auth.save(res.token, res.user);
-        FA.toast(res.user.role === 'owner' ? 'Account created! Now add your first restaurant.' : `Welcome to Food Advisor, ${res.user.name.split(' ')[0]}!`);
+        FA.toast(res.user.role === 'owner' ? 'Account created! Now add your first restaurant.' : `Welcome to Dämdi, ${res.user.name.split(' ')[0]}!`);
         setTimeout(() => redirect(res.user), 500);
       } catch (err) {
         if (err.details) FA.showErrors($reg, err.details);

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" preserveAspectRatio="xMidYMid slice">
+  <!-- Dämdi register illustration: plov cooking in a kazan outdoors (hand-drawn style, original artwork) -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8eab73"/><stop offset="0.55" stop-color="#e2dca0"/><stop offset="1" stop-color="#f5cf68"/></linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffe9a3" stop-opacity="0.9"/><stop offset="1" stop-color="#ffe9a3" stop-opacity="0"/></radialGradient>
+    <linearGradient id="kazan" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2f3a1c"/><stop offset="0.45" stop-color="#4a5a2a"/><stop offset="1" stop-color="#1e2612"/></linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a5763f"/><stop offset="1" stop-color="#6b4825"/></linearGradient>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0.25  0 0 0 0 0.22  0 0 0 0 0.1  0 0 0 0.09 0"/>
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="8"/></filter>
+  </defs>
+
+  <rect width="900" height="1200" fill="url(#sky)"/>
+  <circle cx="660" cy="430" r="220" fill="url(#glow)"/>
+  <circle cx="660" cy="430" r="58" fill="#fff6d2"/>
+
+  <!-- clouds -->
+  <g fill="#fbf4da">
+    <circle cx="210" cy="200" r="58"/><circle cx="280" cy="170" r="76"/><circle cx="360" cy="196" r="56"/><rect x="150" y="196" width="270" height="52" rx="26"/>
+    <circle cx="640" cy="120" r="40"/><circle cx="690" cy="100" r="54"/><circle cx="748" cy="122" r="38"/><rect x="600" y="118" width="186" height="38" rx="19"/>
+  </g>
+  <g fill="#ead08e" opacity="0.55"><rect x="160" y="232" width="250" height="18" rx="9"/><rect x="606" y="146" width="176" height="12" rx="6"/></g>
+
+  <!-- hills -->
+  <path d="M0 560 L120 500 L230 540 L360 470 L480 530 L600 480 L740 540 L900 490 L900 1200 L0 1200Z" fill="#a9b884" opacity="0.85"/>
+  <path d="M0 640 C160 600 300 620 460 630 C620 640 760 600 900 610 L900 1200 L0 1200Z" fill="#7d9a3f"/>
+  <path d="M0 720 C200 690 380 710 560 706 C700 702 800 690 900 696 L900 1200 L0 1200Z" fill="#55732a"/>
+  <g><ellipse cx="110" cy="600" rx="18" ry="58" fill="#3e5a1b"/><ellipse cx="150" cy="616" rx="14" ry="44" fill="#4c6a22"/>
+     <ellipse cx="800" cy="590" rx="18" ry="56" fill="#3e5a1b"/></g>
+
+  <!-- ground -->
+  <path d="M0 860 C240 830 640 840 900 850 L900 1200 L0 1200Z" fill="#3f5a1b"/>
+
+  <!-- fire + stones -->
+  <g filter="url(#soft)" opacity="0.6"><ellipse cx="450" cy="900" rx="170" ry="50" fill="#ffcf5c"/></g>
+  <g stroke="#2a2410" stroke-width="4" stroke-linejoin="round">
+    <path d="M330 912 C360 860 400 870 410 830 C430 870 440 850 450 810 C470 860 490 840 500 830 C510 870 540 860 570 912Z" fill="#f2a72b"/>
+    <path d="M380 912 C400 880 420 880 430 856 C445 880 455 870 462 850 C474 880 492 880 520 912Z" fill="#ffd95a" stroke="none"/>
+    <g fill="#a39a7a"><ellipse cx="320" cy="920" rx="44" ry="22"/><ellipse cx="400" cy="930" rx="40" ry="20"/><ellipse cx="490" cy="932" rx="44" ry="20"/><ellipse cx="575" cy="920" rx="40" ry="22"/></g>
+    <g stroke="#5a3d20" stroke-width="12" stroke-linecap="round"><path d="M360 920 L540 900"/><path d="M370 900 L530 926"/></g>
+  </g>
+
+  <!-- kazan -->
+  <g stroke="#1a2010" stroke-width="5" stroke-linejoin="round">
+    <path d="M250 700 C250 830 330 870 450 870 C570 870 650 830 650 700Z" fill="url(#kazan)"/>
+    <ellipse cx="450" cy="700" rx="200" ry="44" fill="#2a3418"/>
+    <ellipse cx="450" cy="704" rx="182" ry="36" fill="#d9a23a"/>
+    <path d="M240 720 C214 720 214 690 242 690" fill="none" stroke-width="10"/>
+    <path d="M660 720 C686 720 686 690 658 690" fill="none" stroke-width="10"/>
+  </g>
+  <!-- plov on top: rice, carrots, garlic -->
+  <g>
+    <g fill="#f6e7b8"><ellipse cx="400" cy="700" rx="70" ry="16"/><ellipse cx="510" cy="706" rx="80" ry="16"/></g>
+    <g fill="#e2761f"><rect x="350" y="690" width="40" height="8" rx="4" transform="rotate(-12 370 694)"/><rect x="430" y="702" width="44" height="8" rx="4" transform="rotate(10 452 706)"/><rect x="530" y="692" width="40" height="8" rx="4" transform="rotate(-8 550 696)"/><rect x="300" y="708" width="36" height="7" rx="4"/><rect x="560" y="712" width="40" height="8" rx="4" transform="rotate(14 580 716)"/></g>
+    <g stroke="#3a3216" stroke-width="3"><circle cx="452" cy="690" r="18" fill="#f8f1de"/><path d="M452 674 L452 706 M440 678 L446 704 M464 678 L458 704" fill="none"/></g>
+    <g fill="#6b3a22"><ellipse cx="380" cy="712" rx="14" ry="6"/><ellipse cx="520" cy="696" rx="14" ry="6"/><ellipse cx="600" cy="704" rx="12" ry="5"/></g>
+  </g>
+
+  <!-- steam -->
+  <g fill="none" stroke="#fffaf0" stroke-width="9" stroke-linecap="round" opacity="0.8">
+    <path d="M380 650 C360 610 400 590 380 550 C362 516 396 496 380 460"/>
+    <path d="M460 640 C440 596 482 576 462 530 C446 494 480 474 464 430"/>
+    <path d="M540 650 C522 612 560 594 542 556 C526 524 556 506 544 476"/>
+  </g>
+
+  <!-- cutting board with vegetables -->
+  <g stroke="#2a2410" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M520 1010 L880 990 L890 1050 L530 1072Z" fill="url(#wood)"/>
+    <g fill="#e2761f"><path d="M570 1026 L690 1016 L692 1034 L572 1042Z"/><path d="M600 1048 L716 1036 L718 1052 L602 1062Z"/></g>
+    <g fill="#5f7d2a"><path d="M690 1016 C710 1000 716 990 732 990"/><path d="M692 1030 C716 1024 726 1020 740 1012" fill="none"/></g>
+    <circle cx="790" cy="1018" r="30" fill="#d23f3f"/><path d="M780 992 L790 998 L800 990" fill="none" stroke="#3e5a1b"/>
+    <circle cx="840" cy="1036" r="20" fill="#f3e9c8"/>
+    <path d="M40 1040 Q120 1000 220 1030 L230 1080 Q130 1060 50 1090Z" fill="#e8d7a4"/>
+    <path d="M60 1050 Q130 1028 210 1046" fill="none" stroke="#c89a2c" stroke-width="3"/>
+  </g>
+  <g fill="#6f8f3a" stroke="#2e3f12" stroke-width="2">
+    <ellipse cx="270" cy="1030" rx="22" ry="8" transform="rotate(-25 270 1030)"/>
+    <ellipse cx="300" cy="1046" rx="22" ry="8" transform="rotate(15 300 1046)"/>
+    <ellipse cx="285" cy="1062" rx="20" ry="7" transform="rotate(-10 285 1062)"/>
+  </g>
+
+  <rect width="900" height="1200" filter="url(#grain)"/>
+</svg>

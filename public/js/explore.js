@@ -36,7 +36,7 @@ $(async function () {
     $('#pageTitle').text(dishes ? 'Search dishes' : 'Explore restaurants');
     $('#crumb').text(dishes ? 'Dishes' : 'Restaurants');
     $('#pageSub').text(dishes ? 'Find a specific dish across every menu — filter by price, diet and spice.' : 'Filter by cuisine, city, rating and price to find the perfect place.');
-    document.title = (dishes ? 'Search dishes' : 'Explore restaurants') + ' — Food Advisor';
+    document.title = (dishes ? 'Search dishes' : 'Explore restaurants') + ' — Dämdi';
 
     $('#fQ').val(state.q || '');
     $('#fCity').val(state.city || '');

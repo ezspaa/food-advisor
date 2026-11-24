@@ -18,7 +18,7 @@ $(async function () {
     return showMissing(err.status === 404 ? null : err.message);
   }
   const r = data.restaurant;
-  document.title = `${r.name} — ${r.cuisine} in ${r.city} | Food Advisor`;
+  document.title = `${r.name} — ${r.cuisine} in ${r.city} | Dämdi`;
   if (r.status === 'approved') FA.recent.addView(r);
 
   renderHero();

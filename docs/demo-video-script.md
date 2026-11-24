@@ -1,4 +1,4 @@
-# 🎬 Food Advisor — сценарий демо-видео (≈ 6 минут)
+# 🎬 Dämdi (Food Advisor) — сценарий демо-видео (≈ 6 минут)
 
 Каждый снимает свою часть **отдельно**, Мирас потом склеивает всё в одно видео.
 Текст для озвучки — **на английском** (жирным шрифтом в рамках), пояснения что делать на экране — на русском.
@@ -36,12 +36,12 @@
 
 **Слайд 1** — «Find your next favourite table.», группа, четыре имени с ID.
 
-> **Hello! We are Group 4 from CE 202, and this is our final demonstration for F28JC Web Programming — Food Advisor.
+> **Hello! We are Group 4 from CE 202, and this is our final demonstration for F28JC Web Programming. Our Food Advisor web application is called Dämdi — it means “tasty” in Kazakh.
 > Our team is Madina Bazarbayeva, Zamira Nurmanova, Ilyas Sungatov and Miras Yernazarov.**
 
 **Слайд 2** — «Helping people decide where to eat», три карточки ролей. Когда называешь роль — веди мышкой по карточке.
 
-> **Our aim is to help people decide where to eat. Food Advisor is one website to discover restaurants and dishes in Aktobe, Almaty and Astana, compare them by cuisine, location, rating and price, and read honest reviews.
+> **Our aim is to help people decide where to eat. Dämdi is one website to discover restaurants and dishes in Aktobe, Almaty and Astana, compare them by cuisine, location, rating and price, and read honest reviews.
 > The site has three roles. Customers discover and review restaurants.
 > Owners manage their own place — their restaurants, menus and replies to guests.
 > And administrators keep the site trustworthy — they approve restaurants, manage users and remove bad reviews.

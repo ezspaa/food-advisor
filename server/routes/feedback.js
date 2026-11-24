@@ -22,7 +22,7 @@ router.post('/', limiter, async (req, res) => {
     'INSERT INTO feedback (user_id, rating, category, message, email, page, device) VALUES (?, ?, ?, ?, ?, ?, ?)',
     [req.user ? req.user.id : null, d.rating, d.category, d.message, d.email, d.page, d.device]
   );
-  res.status(201).json({ message: 'Thank you! Your feedback helps us improve Food Advisor.' });
+  res.status(201).json({ message: 'Thank you! Your feedback helps us improve Dämdi.' });
 });
 
 module.exports = router;

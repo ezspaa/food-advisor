@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" preserveAspectRatio="xMidYMid slice">
+  <!-- Dämdi login illustration: morning tea by the window (hand-drawn style, original artwork) -->
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9e4c8"/><stop offset="1" stop-color="#d6cfa8"/></linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a8c48a"/><stop offset="0.7" stop-color="#f1e3a4"/><stop offset="1" stop-color="#f7d77a"/></linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#fff6cf" stop-opacity="0.65"/><stop offset="1" stop-color="#fff6cf" stop-opacity="0"/></linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a5763f"/><stop offset="1" stop-color="#6b4825"/></linearGradient>
+    <linearGradient id="pot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7f0de"/><stop offset="0.6" stop-color="#e8dcbc"/><stop offset="1" stop-color="#c9b88c"/></linearGradient>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0.25  0 0 0 0 0.22  0 0 0 0 0.1  0 0 0 0.09 0"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="1200" fill="url(#wall)"/>
+  <!-- wall ornament band -->
+  <path d="M0 140 L900 140" stroke="#5f7d2a" stroke-width="18"/>
+  <path d="M0 140 L900 140" stroke="#d9a21b" stroke-width="4" stroke-dasharray="20 14"/>
+
+  <!-- arched window -->
+  <g stroke="#3a3216" stroke-width="4" stroke-linejoin="round">
+    <path d="M200 720 L200 380 Q200 230 450 230 Q700 230 700 380 L700 720Z" fill="#7a5a32"/>
+    <path d="M226 700 L226 384 Q226 256 450 256 Q674 256 674 384 L674 700Z" fill="url(#sky)"/>
+  </g>
+  <!-- view outside -->
+  <g>
+    <circle cx="560" cy="420" r="46" fill="#fff6d2"/>
+    <g fill="#fbf4da"><circle cx="330" cy="360" r="34"/><circle cx="372" cy="344" r="44"/><circle cx="420" cy="364" r="30"/><rect x="300" y="362" width="150" height="30" rx="15"/></g>
+    <path d="M226 600 C320 560 420 580 520 570 C600 562 640 580 674 576 L674 700 L226 700Z" fill="#8fa95a"/>
+    <path d="M226 640 C330 615 450 640 560 628 C620 622 650 630 674 628 L674 700 L226 700Z" fill="#5f7d2a"/>
+    <ellipse cx="300" cy="560" rx="16" ry="50" fill="#3e5a1b"/><ellipse cx="620" cy="566" rx="14" ry="44" fill="#4c6a22"/>
+  </g>
+  <!-- window frame cross -->
+  <g stroke="#7a5a32" stroke-width="12"><path d="M450 256 L450 700"/><path d="M226 480 L674 480"/></g>
+  <!-- olive branch hanging in -->
+  <g stroke="#3e5a1b" stroke-width="4" fill="none" stroke-linecap="round"><path d="M680 240 C640 300 610 330 560 360"/></g>
+  <g fill="#5f7d2a" stroke="#2e3f12" stroke-width="2">
+    <ellipse cx="660" cy="270" rx="22" ry="8" transform="rotate(-35 660 270)"/>
+    <ellipse cx="640" cy="300" rx="22" ry="8" transform="rotate(20 640 300)"/>
+    <ellipse cx="612" cy="322" rx="22" ry="8" transform="rotate(-30 612 322)"/>
+    <ellipse cx="590" cy="346" rx="20" ry="7" transform="rotate(25 590 346)"/>
+  </g>
+  <g fill="#6b7d2a"><circle cx="628" cy="314" r="7"/><circle cx="600" cy="338" r="6"/></g>
+  <!-- sill -->
+  <rect x="180" y="716" width="540" height="26" rx="6" fill="#8a6538" stroke="#3a3216" stroke-width="4"/>
+  <!-- potted plant -->
+  <g stroke="#2e3f12" stroke-width="3">
+    <path d="M250 716 L256 676 L304 676 L310 716Z" fill="#c89a2c"/>
+    <path d="M280 676 C270 640 250 630 240 610" fill="none" stroke="#3e5a1b"/>
+    <path d="M280 676 C290 640 310 626 324 604" fill="none" stroke="#3e5a1b"/>
+    <ellipse cx="244" cy="620" rx="18" ry="9" fill="#6f8f3a" transform="rotate(40 244 620)"/>
+    <ellipse cx="318" cy="614" rx="18" ry="9" fill="#6f8f3a" transform="rotate(-40 318 614)"/>
+    <ellipse cx="282" cy="640" rx="16" ry="8" fill="#4d7c0f"/>
+  </g>
+
+  <!-- light beam -->
+  <polygon points="226,256 674,256 860,1200 120,1200" fill="url(#beam)"/>
+
+  <!-- low table with dastarkhan -->
+  <g stroke="#2a2410" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M40 880 L860 880 L900 960 L0 960Z" fill="url(#wood)"/>
+    <path d="M90 872 L810 872 L850 948 L50 948Z" fill="#5f7d2a"/>
+    <path d="M70 930 L830 930" fill="none" stroke="#e3b23a" stroke-width="6" stroke-dasharray="18 12"/>
+    <path d="M110 888 L790 888" fill="none" stroke="#e3b23a" stroke-width="3"/>
+    <rect x="0" y="960" width="900" height="240" fill="#5a3d20"/>
+
+    <!-- teapot -->
+    <path d="M330 878 C290 878 280 806 320 784 C350 768 430 768 460 784 C500 806 490 878 450 878Z" fill="url(#pot)"/>
+    <path d="M488 806 C530 796 532 770 556 752" fill="none" stroke-width="13"/>
+    <path d="M488 806 C530 796 532 770 556 752" fill="none" stroke="#efe4c6" stroke-width="7"/>
+    <path d="M304 806 C262 806 262 848 306 846" fill="none" stroke-width="10"/>
+    <ellipse cx="390" cy="778" rx="44" ry="11" fill="#e2d5b0"/>
+    <circle cx="390" cy="763" r="10" fill="#c89a2c"/>
+    <path d="M318 820 Q390 802 462 820" fill="none" stroke="#5f7d2a" stroke-width="5"/>
+    <g fill="#c89a2c" stroke="none"><circle cx="350" cy="840" r="7"/><circle cx="390" cy="846" r="7"/><circle cx="430" cy="840" r="7"/></g>
+
+    <!-- pialas -->
+    <path d="M560 870 Q562 898 598 898 Q634 898 636 870Z" fill="#f7f0de"/>
+    <ellipse cx="598" cy="870" rx="38" ry="9" fill="#d6b07a"/>
+    <path d="M563 881 L633 881" stroke="#4d7c0f" stroke-width="4"/>
+    <path d="M660 876 Q662 904 698 904 Q734 904 736 876Z" fill="#f7f0de"/>
+    <ellipse cx="698" cy="876" rx="38" ry="9" fill="#d6b07a"/>
+    <path d="M663 887 L733 887" stroke="#4d7c0f" stroke-width="4"/>
+
+    <!-- baursak plate -->
+    <ellipse cx="170" cy="894" rx="96" ry="22" fill="#f1e7cd"/>
+    <g fill="#d99a3a">
+      <rect x="102" y="858" width="44" height="32" rx="14"/><rect x="142" y="852" width="44" height="34" rx="14"/>
+      <rect x="182" y="860" width="42" height="30" rx="14"/><rect x="124" y="828" width="42" height="32" rx="14"/>
+      <rect x="162" y="826" width="42" height="32" rx="14"/>
+    </g>
+    <!-- dried fruit bowl -->
+    <path d="M740 820 Q744 860 800 860 Q856 860 860 820Z" fill="#c89a2c"/>
+    <ellipse cx="800" cy="820" rx="60" ry="12" fill="#e7c45a"/>
+  </g>
+  <g fill="#fff1c9" opacity="0.6"><ellipse cx="116" cy="864" rx="10" ry="4"/><ellipse cx="160" cy="858" rx="10" ry="4"/><ellipse cx="140" cy="834" rx="10" ry="4"/></g>
+  <g fill="#7a3d22"><circle cx="776" cy="812" r="9"/><circle cx="798" cy="808" r="9"/><circle cx="820" cy="813" r="9"/></g>
+  <g fill="#b55a2b"><circle cx="788" cy="804" r="7"/><circle cx="810" cy="802" r="7"/></g>
+
+  <!-- steam -->
+  <g fill="none" stroke="#fffaf0" stroke-width="7" stroke-linecap="round" opacity="0.8">
+    <path d="M560 736 C544 706 576 690 560 656 C546 628 574 612 562 584"/>
+    <path d="M598 852 C588 830 610 818 598 794"/>
+    <path d="M698 858 C688 836 710 824 698 800"/>
+  </g>
+
+  <rect width="900" height="1200" filter="url(#grain)"/>
+</svg>

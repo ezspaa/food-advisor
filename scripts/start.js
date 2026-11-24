@@ -40,7 +40,7 @@ function askAll(questions) {
 }
 
 async function main() {
-  console.log('\n🍽️  Food Advisor — starting…\n');
+  console.log('\n🍽️  Dämdi (Food Advisor) — starting…\n');
 
   // 2. .env with the MySQL password
   if (!fs.existsSync('.env')) {
@@ -79,7 +79,7 @@ async function main() {
   });
   server.stderr.on('data', (chunk) => {
     process.stderr.write(chunk);
-    if (/EADDRINUSE/.test(chunk.toString())) console.error(`\n❌ Port ${port} is busy. Is Food Advisor already running? Or change PORT in .env.\n`);
+    if (/EADDRINUSE/.test(chunk.toString())) console.error(`\n❌ Port ${port} is busy. Is Dämdi already running? Or change PORT in .env.\n`);
   });
   server.on('exit', (code) => process.exit(code || 0));
   process.on('SIGINT', () => server.kill('SIGINT'));

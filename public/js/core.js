@@ -1,5 +1,5 @@
 /* =====================================================================
-   Food Advisor — shared front-end module (jQuery)
+   Dämdi (Food Advisor) — shared front-end module (jQuery)
    Loaded on every page. Provides:
      FA.api        AJAX/JSON calls to the Node.js REST API
      FA.store      Web Storage helpers (localStorage + sessionStorage)
@@ -130,6 +130,7 @@
     chef: '<path d="M7 14v6h10v-6M6.5 14A4.5 4.5 0 0 1 7.6 5.2 5 5 0 0 1 16.4 5.2 4.5 4.5 0 0 1 17.5 14z"/>',
     shield: '<path d="M12 3 4.5 6v6c0 4.5 3.2 8 7.5 9 4.3-1 7.5-4.5 7.5-9V6z"/><path d="m9 12 2 2 4-4"/>',
     store: '<path d="M4 10v10h16V10M3 4h18l-1.5 6a3 3 0 0 1-5.6.6 3 3 0 0 1-5.8 0A3 3 0 0 1 4.5 10z"/><path d="M10 20v-5h4v5"/>',
+    bowl: '<path d="M3 11h18a9 7.5 0 0 1-18 0z"/><path d="M8 21h8"/><path d="M8.5 2.5c-1 1.2 1 2.6 0 4M12 2.5c-1 1.2 1 2.6 0 4M15.5 2.5c-1 1.2 1 2.6 0 4"/>',
     utensils: '<path d="M7 3v8M4 3v5a3 3 0 0 0 6 0V3M7 11v10M17 21V3c-2.2 0-4 2.7-4 6.5V13h4"/>',
     filter: '<path d="M4 5h16M7 12h10M10 19h4"/>',
     arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
@@ -176,7 +177,7 @@
     const cls = v >= 4 ? '' : v >= 3 ? 'mid' : 'low';
     return `<span class="rating-pill ${cls}">${FA.starIcon(true)}${v.toFixed(1)}</span>`;
   };
-  const AVATAR_COLORS = ['#e4572e', '#23865a', '#2f6fdb', '#7752d1', '#b7791f', '#d23f6b', '#0f8b8d', '#5f6caf'];
+  const AVATAR_COLORS = ['#4d7c0f', '#b7791f', '#2f6fdb', '#7752d1', '#0f8b8d', '#a16207', '#5f6caf', '#3f6212'];
   FA.avatar = function (name, url, cls = '') {
     const initials = String(name || '?').split(/\s+/).map((w) => w[0]).slice(0, 2).join('').toUpperCase();
     const color = AVATAR_COLORS[[...String(name)].reduce((a, c) => a + c.charCodeAt(0), 0) % AVATAR_COLORS.length];
@@ -634,7 +635,7 @@
   $(document).on('click', '[data-theme-toggle]', (e) => FA.theme.toggle(e));
 
   /* ---------------- Header & footer ---------------- */
-  const LOGO = `<a href="/" class="logo" aria-label="Food Advisor home"><span class="logo-mark">${FA.icon('utensils')}</span><span>Food<b>Advisor</b></span></a>`;
+  const LOGO = `<a href="/" class="logo" aria-label="Dämdi home"><span class="logo-mark">${FA.icon('bowl')}</span><span>Däm<b>di</b></span></a>`;
 
   FA.renderHeader = function () {
     const user = FA.auth.user();
@@ -717,7 +718,7 @@
           <li><a href="/owner">Owner dashboard</a></li>
           <li><a href="/login">Log in</a></li></ul></div>
       </div>
-      <div class="bottom"><span>© 2026 Food Advisor · F28JC Web Programming · CE 202 Group 4</span><span>Built with HTML, CSS, JavaScript, jQuery, Node.js &amp; MySQL</span></div>`);
+      <div class="bottom"><span>© 2026 Dämdi — your food advisor · F28JC Web Programming · CE 202 Group 4</span><span>Built with HTML, CSS, JavaScript, jQuery, Node.js &amp; MySQL</span></div>`);
   };
 
   // header interactions
@@ -910,7 +911,7 @@
     const faces = [['1', '😞'], ['2', '🙁'], ['3', '😐'], ['4', '🙂'], ['5', '🤩']];
     const cats = [['design', 'Design'], ['usability', 'Ease of use'], ['bug', 'Bug'], ['idea', 'Idea'], ['other', 'Other']];
     FA.modal({
-      title: 'How do you like Food Advisor?',
+      title: 'How do you like Dämdi?',
       submitText: 'Send feedback',
       body: `
         <p class="muted" style="margin-bottom:16px">We are students building this site — your honest opinion really helps! 🙏</p>
@@ -1013,7 +1014,7 @@
     canvas.width = window.innerWidth; canvas.height = window.innerHeight;
     document.body.appendChild(canvas);
     const ctx = canvas.getContext('2d');
-    const colors = ['#e4572e', '#f5a524', '#23865a', '#2f6fdb', '#7752d1', '#ff8fab'];
+    const colors = ['#4d7c0f', '#d9a21b', '#86ad36', '#f2cf5b', '#3f6212', '#e3e7d4'];
     const parts = Array.from({ length: 140 }, () => ({
       x, y, r: 3 + Math.random() * 4, c: colors[Math.floor(Math.random() * colors.length)],
       vx: (Math.random() - 0.5) * 14, vy: -6 - Math.random() * 10, rot: Math.random() * 6, vr: (Math.random() - 0.5) * 0.3,
