@@ -203,6 +203,7 @@ tests/api.test.js         end-to-end tests
 ## 6. Suggested 6-minute demo script
 
 Full narration for each speaker: [`docs/demo-video-script.md`](docs/demo-video-script.md).
+Q&A preparation for the live demo: [`docs/qa-cheatsheet.md`](docs/qa-cheatsheet.md).
 
 | Time | Who | What to show |
 |---|---|---|
