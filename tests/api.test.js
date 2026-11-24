@@ -98,8 +98,22 @@ describe('FR2 — search and filter', () => {
     assert.equal((await api('GET', '/meta')).status, 200); // users table still exists
   });
   test('pending restaurants are not listed publicly', async () => {
-    const r = await api('GET', '/restaurants?q=Baursak');
-    assert.ok(!r.data.items.some((x) => x.name === 'Baursak & Co')); // pending in the sample data
+    // creates its own pending restaurant, so the result does not depend on what an admin approved in the demo data
+    const name = `Hidden Pending ${stamp}`;
+    const created = await api('POST', '/owner/restaurants', { token: owner, body: {
+      name, cuisine_id: 1, description: 'Pending restaurant created by the automated test suite.',
+      city: 'Aktobe', address: 'Test street 2', phone: '+7 700 000 00 01', price_level: 2, opens_at: '09:00', closes_at: '22:00',
+    } });
+    assert.equal(created.status, 201);
+    try {
+      const r = await api('GET', `/restaurants?q=${encodeURIComponent(name)}`);
+      assert.equal(r.status, 200);
+      assert.ok(!r.data.items.some((x) => x.name === name));
+      const s = await api('GET', `/restaurants/suggest?q=${encodeURIComponent(name)}`);
+      assert.ok(!(s.data.restaurants || []).some((x) => x.name === name));
+    } finally {
+      await api('DELETE', `/owner/restaurants/${created.data.id}`, { token: owner });
+    }
   });
 });
 
